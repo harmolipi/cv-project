@@ -7,11 +7,16 @@ class EditableText extends React.Component {
       isEditing: false,
       text: '',
       placeholder: this.props.text,
+      inputType: this.props.inputType,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleClickAway = this.handleClickAway.bind(this);
   }
+
+  static defaultProps = {
+    inputType: 'text',
+  };
 
   handleChange(event) {
     this.setState({ text: event.target.value });
@@ -36,19 +41,28 @@ class EditableText extends React.Component {
   }
 
   render() {
-    if (this.state.isEditing) {
-      return (
-        <div>
-          <input
-            type="text"
-            placeholder={this.state.placeholder}
-            value={this.state.text}
-            id="currently-editing"
-            onChange={this.handleChange}
-            onBlur={this.handleClickAway}
-          />
-        </div>
+    const inputField =
+      this.state.inputType === 'textarea' ? (
+        <textarea
+          type={this.state.inputType}
+          placeholder={this.state.placeholder}
+          value={this.state.text}
+          id="currently-editing"
+          onChange={this.handleChange}
+          onBlur={this.handleClickAway}
+        />
+      ) : (
+        <input
+          type={this.state.inputType}
+          placeholder={this.state.placeholder}
+          value={this.state.text}
+          id="currently-editing"
+          onChange={this.handleChange}
+          onBlur={this.handleClickAway}
+        />
       );
+    if (this.state.isEditing) {
+      return <div>{inputField}</div>;
     }
 
     return (
