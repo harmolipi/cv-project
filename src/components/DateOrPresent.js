@@ -30,7 +30,7 @@ class DateOrPresent extends EditableText {
     );
 
     return (
-      <div>
+      <span>
         {textDisplay}
         <label>
           (Still {this.state.verb} here?)
@@ -41,7 +41,7 @@ class DateOrPresent extends EditableText {
             onChange={this.togglePresent}
           />
         </label>
-      </div>
+      </span>
     );
   }
 }
