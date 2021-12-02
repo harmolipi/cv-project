@@ -62,15 +62,13 @@ class EditableText extends React.Component {
         />
       );
     if (this.state.isEditing) {
-      return <div>{inputField}</div>;
+      return <span>{inputField}</span>;
     }
 
     return (
-      <div>
-        <span onClick={this.handleClick}>
-          {this.state.text || this.state.placeholder}
-        </span>
-      </div>
+      <span onClick={this.handleClick}>
+        {this.state.text || this.state.placeholder}
+      </span>
     );
   }
 }
