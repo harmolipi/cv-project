@@ -66,7 +66,7 @@ class EditableText extends React.Component {
     }
 
     return (
-      <span onClick={this.handleClick}>
+      <span className="editable" onClick={this.handleClick}>
         {this.state.text || this.state.placeholder}
       </span>
     );
