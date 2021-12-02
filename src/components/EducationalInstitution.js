@@ -9,8 +9,10 @@ class EducationalInstitution extends React.Component {
         <div className="school-info">
           <EditableText text="Name of school" />
           <EditableText text="Title of study" />
-          <EditableText text="Date enrolled" inputType="date" />
-          <DateOrPresent text="Date graduated" workOrSchool="school" />
+          <span className="date-range">
+            <EditableText text="Date enrolled" inputType="date" /> to{' '}
+            <DateOrPresent text="Date graduated" workOrSchool="school" />
+          </span>
         </div>
         <button
           className="delete-school"

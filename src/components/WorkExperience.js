@@ -10,8 +10,10 @@ class WorkExperience extends React.Component {
           <EditableText text="Company Name" />
           <EditableText text="Position Title" />
           <EditableText text="Work description" inputType="textarea" />
-          <EditableText text="Date started" inputType="date" />
-          <DateOrPresent text="Date left" workOrSchool="work" />
+          <span className="date-range">
+            <EditableText text="Date started" inputType="date" /> to{' '}
+            <DateOrPresent text="Date left" workOrSchool="work" />
+          </span>
         </div>
         <button
           className="delete-school"
