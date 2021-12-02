@@ -24,7 +24,7 @@ class DateOrPresent extends EditableText {
 
   render() {
     const textDisplay = this.state.present ? (
-      <span>Current</span>
+      <span>present</span>
     ) : (
       <EditableText {...this.props} />
     );
