@@ -46,13 +46,16 @@ class App extends React.Component {
           <EditableText text="Name" />
           <EditableText text="Email" />
           <EditableText text="Phone" />
-          <EditableText text="Date" inputType="date" />
           <EditableText text="Description" inputType="textarea" />
         </div>
-        <ul className="educational-experience">{education}</ul>
-        <button onClick={this.addEducationalInstitution}>Add</button>
-        <ul className="work-experience">{work}</ul>
-        <button onClick={this.addWorkExperience}>Add</button>
+        <div className="educational-experience">
+          <ul className="education-list">{education}</ul>
+          <button onClick={this.addEducationalInstitution}>Add</button>
+        </div>
+        <div className="work-experience">
+          <ul className="work-list">{work}</ul>
+          <button onClick={this.addWorkExperience}>Add</button>
+        </div>
       </div>
     );
   }
