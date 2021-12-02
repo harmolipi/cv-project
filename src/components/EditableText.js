@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/EditableText.css';
 
 class EditableText extends React.Component {
   constructor(props) {
@@ -65,9 +66,13 @@ class EditableText extends React.Component {
       return <span>{inputField}</span>;
     }
 
-    return (
-      <span className="editable" onClick={this.handleClick}>
-        {this.state.text || this.state.placeholder}
+    return this.state.text ? (
+      <span className="editable-text" onClick={this.handleClick}>
+        {this.state.text}
+      </span>
+    ) : (
+      <span className="editable-text empty-field" onClick={this.handleClick}>
+        {this.state.placeholder}
       </span>
     );
   }
