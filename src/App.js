@@ -7,37 +7,91 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      educationalInstitutions: [<EducationalInstitution />],
-      workExperiences: [<WorkExperience />],
+      educationalInstitutions: [],
+      workExperiences: [],
     };
     this.addEducationalInstitution = this.addEducationalInstitution.bind(this);
     this.addWorkExperience = this.addWorkExperience.bind(this);
+    this.removeEducationalInstitution =
+      this.removeEducationalInstitution.bind(this);
+    this.removeWorkExperience = this.removeWorkExperience.bind(this);
   }
 
   addEducationalInstitution() {
-    this.setState({
+    this.setState((prevState) => ({
       educationalInstitutions: [
-        ...this.state.educationalInstitutions,
-        <EducationalInstitution />,
+        ...prevState.educationalInstitutions,
+        {
+          school: (
+            <EducationalInstitution
+              deleteSchool={this.removeEducationalInstitution}
+              schoolNum={
+                prevState.educationalInstitutions.at(-1)
+                  ? prevState.educationalInstitutions.at(-1).id + 1
+                  : 0
+              }
+            />
+          ),
+          id: prevState.educationalInstitutions.at(-1)
+            ? prevState.educationalInstitutions.at(-1).id + 1
+            : 0,
+        },
       ],
-    });
+    }));
   }
 
   addWorkExperience() {
-    this.setState({
-      workExperiences: [...this.state.workExperiences, <WorkExperience />],
-    });
+    this.setState((prevState) => ({
+      workExperiences: [
+        ...prevState.workExperiences,
+        {
+          work: (
+            <WorkExperience
+              deleteWork={this.removeWorkExperience}
+              workNum={
+                prevState.workExperiences.at(-1)
+                  ? prevState.workExperiences.at(-1).id + 1
+                  : 0
+              }
+            />
+          ),
+          id: prevState.workExperiences.at(-1)
+            ? prevState.workExperiences.at(-1).id + 1
+            : 0,
+        },
+      ],
+    }));
+  }
+
+  removeEducationalInstitution(toDelete) {
+    this.setState((prevState) => ({
+      educationalInstitutions: prevState.educationalInstitutions.filter(
+        (educationalInstitution, i) => educationalInstitution.id !== toDelete
+      ),
+    }));
+  }
+
+  removeWorkExperience(toDelete) {
+    this.setState((prevState) => ({
+      workExperiences: prevState.workExperiences.filter(
+        (workExperience) => workExperience.id !== toDelete
+      ),
+    }));
   }
 
   render() {
     const education = this.state.educationalInstitutions.map(
-      (educationalInstitution, index) => {
-        return <li key={index}>{educationalInstitution}</li>;
+      (educationalInstitution) => {
+        return (
+          <li key={educationalInstitution.id}>
+            {educationalInstitution.school}
+          </li>
+        );
       }
     );
 
-    const work = this.state.workExperiences.map((workExperience, index) => {
-      return <li key={index}>{workExperience}</li>;
+    const work = this.state.workExperiences.map((workExperience) => {
+      return <li key={workExperience.id}>{workExperience.work}</li>;
     });
 
     return (
