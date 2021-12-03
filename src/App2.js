@@ -97,8 +97,8 @@ class App extends React.Component {
     });
 
     return (
-      <section className="text-gray-600 body-font bg-gray-200">
-        <div className="container px-5 py-24 mx-auto flex flex-col bg-white">
+      <section className="min-h-screen py-5 text-gray-600 body-font bg-gray-200">
+        <div className="container px-5 mx-auto flex flex-col bg-white">
           <div className="lg:w-11/12 mx-auto">
             <div className="flex flex-col sm:flex-row mt-10">
               <div className="sm:w-2/5 text-center sm:pr-8 sm:py-8">
@@ -130,15 +130,28 @@ class App extends React.Component {
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                 <h3 className="leading-relaxed text-2xl text-indigo-500 mb-4">
-                  Experience
+                  Education
                 </h3>
                 <div className="educational-experience">
                   <ul className="education-list">{education}</ul>
                   <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    className="mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     onClick={this.addEducationalInstitution}
                   >
-                    + Add
+                    <span>+ Add</span>
+                  </button>
+                </div>
+                <hr />
+                <h3 className="leading-relaxed text-2xl text-indigo-500 mb-4">
+                  Experience
+                </h3>
+                <div className="work-experience">
+                  <ul className="work-list">{work}</ul>
+                  <button
+                    className="mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={this.addWorkExperience}
+                  >
+                    <span>+ Add</span>
                   </button>
                 </div>
                 <p className="leading-relaxed mb-4">
