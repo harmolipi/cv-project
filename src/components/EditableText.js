@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/EditableText.css';
 
 class EditableText extends React.Component {
   constructor(props) {
