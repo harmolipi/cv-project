@@ -130,26 +130,28 @@ class App extends React.Component {
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                 <h3 className="leading-relaxed text-2xl text-indigo-500 mb-4">
-                  Education
+                  Experience
                 </h3>
-                <div className="educational-experience">
-                  <ul className="education-list">{education}</ul>
+                <div className="work-experience">
+                  <ul className="work-list list-disc list-outside">{work}</ul>
                   <button
                     className="mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    onClick={this.addEducationalInstitution}
+                    onClick={this.addWorkExperience}
                   >
                     <span>+ Add</span>
                   </button>
                 </div>
                 <hr />
-                <h3 className="leading-relaxed text-2xl text-indigo-500 mb-4">
-                  Experience
+                <h3 className="leading-relaxed text-2xl text-indigo-500 my-4">
+                  Education
                 </h3>
-                <div className="work-experience">
-                  <ul className="work-list">{work}</ul>
+                <div className="educational-experience">
+                  <ul className="education-list list-disc list-outside">
+                    {education}
+                  </ul>
                   <button
                     className="mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    onClick={this.addWorkExperience}
+                    onClick={this.addEducationalInstitution}
                   >
                     <span>+ Add</span>
                   </button>

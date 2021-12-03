@@ -32,14 +32,16 @@ class DateOrPresent extends EditableText {
     return (
       <span>
         {textDisplay}
-        <label>
-          (Still {this.state.verb} here?)
+        <label className="mx-1 text-sm">
+          (Still {this.state.verb} here?
           <input
             type="checkbox"
             name="present"
+            className="mx-2"
             checked={this.state.present}
             onChange={this.togglePresent}
           />
+          )
         </label>
       </span>
     );

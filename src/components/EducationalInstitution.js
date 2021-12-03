@@ -5,20 +5,26 @@ import DateOrPresent from './DateOrPresent';
 class EducationalInstitution extends React.Component {
   render() {
     return (
-      <div className="educational-institution">
+      <div className="educational-institution my-4">
         <div className="school-info">
-          <EditableText text="Name of school" />
-          <EditableText text="Title of study" />
-          <span className="date-range">
-            <EditableText text="Date enrolled" inputType="date" /> to{' '}
-            <DateOrPresent text="Date graduated" workOrSchool="school" />
-          </span>
+          <p>
+            <span className="font-semibold">
+              <EditableText text="Name of school" />
+            </span>{' '}
+            - <EditableText text="Title of study" />
+          </p>
+          <div className="">
+            <div className="date-range flex gap-1">
+              <EditableText text="Enrolled" inputType="date" /> <span>to </span>
+              <DateOrPresent text="Graduated" workOrSchool="school" />
+            </div>
+          </div>
         </div>
         <button
-          className="delete-school"
+          className="delete-school text-sm bg-red-300 hover:bg-red-400 text-gray-900 font-bold py-1 px-3 my-2 rounded inline-flex items-center"
           onClick={() => this.props.deleteSchool(this.props.schoolNum)}
         >
-          Remove
+          <span>Remove</span>
         </button>
       </div>
     );
