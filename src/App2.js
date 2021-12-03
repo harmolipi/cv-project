@@ -85,7 +85,7 @@ class App extends React.Component {
     const education = this.state.educationalInstitutions.map(
       (educationalInstitution) => {
         return (
-          <li key={educationalInstitution.id}>
+          <li key={educationalInstitution.id} className="mt-3">
             {educationalInstitution.school}
           </li>
         );
@@ -93,14 +93,18 @@ class App extends React.Component {
     );
 
     const work = this.state.workExperiences.map((workExperience) => {
-      return <li key={workExperience.id}>{workExperience.work}</li>;
+      return (
+        <li key={workExperience.id} className="mt-3">
+          {workExperience.work}
+        </li>
+      );
     });
 
     return (
       <section className="min-h-screen py-5 text-gray-600 body-font bg-gray-200">
         <div className="container px-5 mx-auto flex flex-col bg-white">
           <div className="lg:w-11/12 mx-auto">
-            <div className="flex flex-col sm:flex-row mt-10">
+            <div className="flex flex-col sm:flex-row my-10">
               <div className="sm:w-2/5 text-center sm:pr-8 sm:py-8">
                 <div className="flex flex-col items-center text-center justify-center border-b pb-12">
                   <h2 className="font-medium title-font mt-4 text-gray-900 text-2xl">
@@ -119,7 +123,7 @@ class App extends React.Component {
                   </p>
                 </div>
 
-                <div className="mt-12 flex flex-col">
+                <div className="mt-6 flex flex-col">
                   <p className="text-gray-600 text-left font-light mb-5">
                     <EditableText
                       text="Enter a short description about yourself here."
@@ -127,7 +131,10 @@ class App extends React.Component {
                     />
                   </p>
                   <hr />
-                  <p className="text-gray-600 text-left font-light my-5">
+                  <h3 className="leading-relaxed text-left text-2xl text-indigo-500 mt-3 mb-2">
+                    Skills
+                  </h3>
+                  <p className="text-gray-600 text-left font-light">
                     <EditableText
                       text="List your skills."
                       inputType="textarea"
