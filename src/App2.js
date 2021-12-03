@@ -120,16 +120,23 @@ class App extends React.Component {
                 </div>
 
                 <div className="mt-12 flex flex-col">
-                  <p className="text-gray-600 text-left font-light">
+                  <p className="text-gray-600 text-left font-light mb-5">
                     <EditableText
                       text="Enter a short description about yourself here."
+                      inputType="textarea"
+                    />
+                  </p>
+                  <hr />
+                  <p className="text-gray-600 text-left font-light my-5">
+                    <EditableText
+                      text="List your skills."
                       inputType="textarea"
                     />
                   </p>
                 </div>
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                <h3 className="leading-relaxed text-2xl text-indigo-500 mb-4">
+                <h3 className="leading-relaxed text-2xl text-indigo-500 my-4">
                   Experience
                 </h3>
                 <div className="work-experience">
@@ -156,17 +163,6 @@ class App extends React.Component {
                     <span>+ Add</span>
                   </button>
                 </div>
-                <p className="leading-relaxed mb-4">
-                  Meggings portland fingerstache lyft, post-ironic fixie man bun
-                  banh mi umami everyday carry hexagon locavore direct trade art
-                  party. Locavore small batch listicle gastropub farm-to-table
-                  lumbersexual salvia messenger bag. Coloring book flannel
-                  truffaut craft beer drinking vinegar sartorial, disrupt
-                  fashion axe normcore meh butcher. Portland 90's scenester
-                  vexillologist forage post-ironic asymmetrical, chartreuse
-                  disrupt butcher paleo intelligentsia pabst before they sold
-                  out four loko. 3 wolf moon brooklyn.
-                </p>
               </div>
             </div>
           </div>

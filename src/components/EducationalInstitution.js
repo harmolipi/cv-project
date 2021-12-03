@@ -13,12 +13,13 @@ class EducationalInstitution extends React.Component {
             </span>{' '}
             - <EditableText text="Title of study" />
           </p>
-          <div className="">
-            <div className="date-range flex gap-1">
-              <EditableText text="Enrolled" inputType="date" /> <span>to </span>
-              <DateOrPresent text="Graduated" workOrSchool="school" />
-            </div>
-          </div>
+          <p className="date-range text-sm">
+            <EditableText text="Enrolled" inputType="date" /> <span>to </span>
+            <DateOrPresent text="Graduated" workOrSchool="school" />
+          </p>
+          <p className="text-sm">
+            <EditableText text="Education description" inputType="textarea" />
+          </p>
         </div>
         <button
           className="delete-school text-sm bg-red-300 hover:bg-red-400 text-gray-900 font-bold py-1 px-3 my-2 rounded inline-flex items-center"
