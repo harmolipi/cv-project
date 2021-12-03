@@ -1,4 +1,6 @@
 import React from 'react';
+import html2canvas from 'html2canvas';
+import jsPdf from 'jspdf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import EditableText from './components/EditableText';
@@ -17,6 +19,7 @@ class App extends React.Component {
     this.removeEducationalInstitution =
       this.removeEducationalInstitution.bind(this);
     this.removeWorkExperience = this.removeWorkExperience.bind(this);
+    this.printPDF = this.printPDF.bind(this);
   }
 
   addEducationalInstitution() {
@@ -81,6 +84,25 @@ class App extends React.Component {
     }));
   }
 
+  printPDF() {
+    const resumeElement = document.querySelector('#resume-body');
+    html2canvas(resumeElement, {
+      onclone: (document) => {
+        document.getElementById('print-button').style.visibility = 'hidden';
+      },
+    }).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPdf({ orientation: 'p', unit: 'px', format: 'letter' });
+      const width = pdf.internal.pageSize.getWidth();
+      console.log(width);
+      const height = pdf.internal.pageSize.getHeight();
+      console.log(height);
+
+      pdf.addImage(imgData, 'PNG', 0, 0, 100, 200);
+      pdf.save('your-resume.pdf');
+    });
+  }
+
   render() {
     const education = this.state.educationalInstitutions.map(
       (educationalInstitution) => {
@@ -97,7 +119,7 @@ class App extends React.Component {
     });
 
     return (
-      <section className="text-gray-600 body-font bg-gray-200">
+      <section id="resume-body" className="text-gray-600 body-font bg-gray-200">
         <div className="container px-5 py-24 mx-auto flex flex-col bg-white">
           <div className="lg:w-11/12 mx-auto">
             <div className="flex flex-col sm:flex-row mt-10">
@@ -138,7 +160,7 @@ class App extends React.Component {
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     onClick={this.addEducationalInstitution}
                   >
-                    + Add
+                    <span>+ Add</span>
                   </button>
                 </div>
                 <p className="leading-relaxed mb-4">
@@ -152,6 +174,13 @@ class App extends React.Component {
                   disrupt butcher paleo intelligentsia pabst before they sold
                   out four loko. 3 wolf moon brooklyn.
                 </p>
+                <button
+                  id="print-button"
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                  onClick={this.printPDF}
+                >
+                  <span>Print</span>
+                </button>
               </div>
             </div>
           </div>
