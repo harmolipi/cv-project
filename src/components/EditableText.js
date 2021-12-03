@@ -48,6 +48,7 @@ class EditableText extends React.Component {
           placeholder={this.state.placeholder}
           value={this.state.text}
           id="currently-editing"
+          className="form-textarea appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
           onChange={this.handleChange}
           onBlur={this.handleClickAway}
         />
@@ -57,6 +58,7 @@ class EditableText extends React.Component {
           placeholder={this.state.placeholder}
           value={this.state.text}
           id="currently-editing"
+          className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           onChange={this.handleChange}
           onBlur={this.handleClickAway}
         />
