@@ -13,11 +13,11 @@ class WorkExperience extends React.Component {
           <p>
             <EditableText text="Position Title" />
           </p>
-          <p className="date-range text-sm">
+          <p className="date-range text-sm text-gray-500">
             <EditableText text="Date started" inputType="date" /> to{' '}
             <DateOrPresent text="date stopped" workOrSchool="work" />
           </p>
-          <p className="text-sm">
+          <p className="text-sm mt-2">
             <EditableText text="Work description" inputType="textarea" />
           </p>
         </div>

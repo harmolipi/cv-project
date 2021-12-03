@@ -13,11 +13,11 @@ class EducationalInstitution extends React.Component {
             </span>{' '}
             - <EditableText text="Title of study" />
           </p>
-          <p className="date-range text-sm">
+          <p className="date-range text-sm text-gray-500">
             <EditableText text="Enrolled" inputType="date" /> <span>to </span>
             <DateOrPresent text="Graduated" workOrSchool="school" />
           </p>
-          <p className="text-sm">
+          <p className="text-sm mt-2">
             <EditableText text="Education description" inputType="textarea" />
           </p>
         </div>
