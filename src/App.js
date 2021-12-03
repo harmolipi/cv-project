@@ -96,19 +96,21 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <div className="personal-info">
-          <EditableText text="Name" />
-          <EditableText text="Email" />
-          <EditableText text="Phone" />
-          <EditableText text="Description" inputType="textarea" />
-        </div>
-        <div className="educational-experience">
-          <ul className="education-list">{education}</ul>
-          <button onClick={this.addEducationalInstitution}>Add</button>
-        </div>
-        <div className="work-experience">
-          <ul className="work-list">{work}</ul>
-          <button onClick={this.addWorkExperience}>Add</button>
+        <div className="content container mx-auto">
+          <div className="personal-info">
+            <EditableText text="Name" />
+            <EditableText text="Email" />
+            <EditableText text="Phone" />
+            <EditableText text="Description" inputType="textarea" />
+          </div>
+          <div className="educational-experience">
+            <ul className="education-list">{education}</ul>
+            <button onClick={this.addEducationalInstitution}>Add</button>
+          </div>
+          <div className="work-experience">
+            <ul className="work-list">{work}</ul>
+            <button onClick={this.addWorkExperience}>Add</button>
+          </div>
         </div>
       </div>
     );
