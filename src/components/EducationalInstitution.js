@@ -14,8 +14,9 @@ class EducationalInstitution extends React.Component {
             - <EditableText text="Title of study" />
           </p>
           <p className="date-range text-sm text-gray-500">
-            <EditableText text="Enrolled" inputType="date" /> <span>to </span>
-            <DateOrPresent text="Graduated" workOrSchool="school" />
+            <EditableText text="Date enrolled" inputType="date" />{' '}
+            <span>to </span>
+            <DateOrPresent text="date graduated" workOrSchool="school" />
           </p>
           <p className="text-sm mt-2">
             <EditableText text="Education description" inputType="textarea" />
