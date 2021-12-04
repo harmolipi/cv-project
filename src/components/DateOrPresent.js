@@ -32,7 +32,7 @@ class DateOrPresent extends EditableText {
     return (
       <span>
         {textDisplay}
-        <label className="mx-1 text-sm">
+        <label className="hide-on-preview mx-1 text-sm">
           (Still {this.state.verb} here?
           <input
             type="checkbox"

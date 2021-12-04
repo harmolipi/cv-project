@@ -22,7 +22,7 @@ class WorkExperience extends React.Component {
           </p>
         </div>
         <button
-          className="delete-school delete-school text-sm bg-red-300 hover:bg-red-400 text-gray-900 font-bold py-1 px-3 my-2 rounded inline-flex items-center"
+          className="delete-school hide-on-preview text-sm bg-red-300 hover:bg-red-400 text-gray-900 font-bold py-1 px-3 my-2 rounded inline-flex items-center"
           onClick={() => this.props.deleteWork(this.props.workNum)}
         >
           Remove
