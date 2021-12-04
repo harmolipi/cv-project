@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# CV Application Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Created as part of [The Odin Project](https://www.theodinproject.com) curriculum.
 
-## Available Scripts
+View on [Github](https://github.com/harmolipi/cv-project).
 
-In the project directory, you can run:
+## Functionality
 
-### `yarn start`
+This is the [CV Application](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/javascript/lessons/cv-application) project, where I use React to create a site where users can click to edit fields and enter information to format their own resumes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Thoughts
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+It was really cool to finally dive more deeply into React, and make a project with some more complexity to it. Before starting, I clicked to see some of the other learners' submissions, and I realized I really liked one where you could just click on the text and have it be transformed into an input field, and then automatically saved when you click away - so I wanted to do that too, instead of having separate edit and submit buttons.
 
-### `yarn test`
+Ultimately, it wasn't that difficult. Just a matter of organizing separate things into separate components, and working no each of them individually. This composable approach made life so much easier. The whole time I worked on this, I was comparing it to the process of making my [Task App](https://github.com/harmolipi/task-app) with vanilla JS, and how much more difficult and convoluted it felt. I think it would be much easier to tackle now with React.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Additionally, this time around I also experimented with [TailwindCSS](https://tailwindcss.com/) for the first time. It took some adjusting as I got a sense of what class does what, but eventually I really liked it. It seems to work well with React's use of components. I know I can refactor even more things into components to save myself from having all their classes listed multiple times (for example, with the various buttons in the application), so on a future pass I'll have to do that.
 
-### `yarn build`
+What was most surprising to me is that I ended up spending more time styling the app than getting it to function, which is a real testament to React. I look forward to learning more.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+God bless.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-Niko Birbilis
