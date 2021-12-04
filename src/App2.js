@@ -4,6 +4,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import EditableText from './components/EditableText';
 import EducationalInstitution from './components/EducationalInstitution';
 import WorkExperience from './components/WorkExperience';
+import PreviewModeButton from './components/PreviewModeButton';
 
 class App extends React.Component {
   constructor(props) {
@@ -102,6 +103,9 @@ class App extends React.Component {
 
     return (
       <section className="min-h-screen py-5 text-gray-600 body-font bg-gray-200">
+        <div className="absolute top-1 right-1">
+          <PreviewModeButton />
+        </div>
         <div className="container px-5 mx-auto flex flex-col bg-white">
           <div className="lg:w-11/12 mx-auto">
             <div className="flex flex-col sm:flex-row my-10">
@@ -149,13 +153,13 @@ class App extends React.Component {
                 <div className="work-experience">
                   <ul className="work-list list-disc list-outside">{work}</ul>
                   <button
-                    className="mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    className="hide-on-preview mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     onClick={this.addWorkExperience}
                   >
                     <span>+ Add</span>
                   </button>
                 </div>
-                <hr />
+                <hr className="my-4" />
                 <h3 className="leading-relaxed text-2xl text-indigo-500 my-4">
                   Education
                 </h3>
@@ -164,7 +168,7 @@ class App extends React.Component {
                     {education}
                   </ul>
                   <button
-                    className="mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    className="hide-on-preview mx-auto my-3 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     onClick={this.addEducationalInstitution}
                   >
                     <span>+ Add</span>
