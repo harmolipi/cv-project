@@ -16,6 +16,8 @@ Ultimately, it wasn't that difficult. Just a matter of organizing separate thing
 
 Additionally, this time around I also experimented with [TailwindCSS](https://tailwindcss.com/) for the first time. It took some adjusting as I got a sense of what class does what, but eventually I really liked it. It seems to work well with React's use of components. I know I can refactor even more things into components to save myself from having all their classes listed multiple times (for example, with the various buttons in the application), so on a future pass I'll have to do that.
 
+In the future, I also hope to return to it and explore ways to export the finished resume. For now, if you actually want to use it, you'll need to take a screenshot. But it would be great to figure out how to export it to PDF.
+
 What was most surprising to me is that I ended up spending more time styling the app than getting it to function, which is a real testament to React. I look forward to learning more.
 
 God bless.
