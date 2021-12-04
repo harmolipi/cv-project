@@ -72,7 +72,10 @@ class EditableText extends React.Component {
         {this.state.text}
       </span>
     ) : (
-      <span className="editable-text empty-field" onClick={this.handleClick}>
+      <span
+        className="editable-text empty-field bg-blue-50 hover:bg-blue-200"
+        onClick={this.handleClick}
+      >
         {this.state.placeholder}
       </span>
     );
