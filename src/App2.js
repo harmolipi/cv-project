@@ -106,7 +106,7 @@ class App extends React.Component {
         <div className="absolute top-1 right-1">
           <PreviewModeButton />
         </div>
-        <div className="container px-5 mx-auto flex flex-col bg-white">
+        <div className="container my-5 mx-auto flex flex-col bg-white">
           <div className="lg:w-11/12 mx-auto">
             <div className="flex flex-col sm:flex-row my-10">
               <div className="sm:w-2/5 text-center sm:pr-8 sm:py-8">
@@ -177,6 +177,21 @@ class App extends React.Component {
               </div>
             </div>
           </div>
+          <footer>
+            <div className="bg-gray-100">
+              <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">
+                  Build your own resume at{' '}
+                  <a
+                    href="https://harmolipi.github.io/cv-project"
+                    className="text-blue-600"
+                  >
+                    harmolipi.github.io/cv-project
+                  </a>
+                </span>
+              </div>
+            </div>
+          </footer>
         </div>
       </section>
     );
