@@ -15,7 +15,7 @@ class PreviewModeButton extends React.Component {
   render() {
     return (
       <button
-        className="preview-mode-button text-sm bg-white hover:bg-gray-200 text-black-900 font-bold py-1 px-3 my-2 rounded border-opacity-100 border-2 inline-flex items-center"
+        className="preview-mode-button text-sm bg-white border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white text-center py-1 px-3 rounded"
         onClick={this.togglePreviewMode}
       >
         Preview mode
