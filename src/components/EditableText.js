@@ -70,7 +70,10 @@ class EditableText extends React.Component {
     return this.state.text ? (
       <span className="editable-text" onClick={this.handleClick}>
         {this.state.inputType === 'date'
-          ? new Date(this.state.text).toDateString()
+          ? new Date(this.state.text).toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'long',
+            })
           : this.state.text}
       </span>
     ) : (
