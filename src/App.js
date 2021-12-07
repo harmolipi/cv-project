@@ -107,7 +107,7 @@ class App extends React.Component {
           <PreviewModeButton />
         </div>
         <div className="container my-5 mx-auto flex flex-col bg-white">
-          <div className="lg:w-11/12 mx-auto">
+          <div className="w-11/12 mx-auto">
             <div className="flex flex-col sm:flex-row my-10">
               <div className="sm:w-2/5 text-center sm:pr-8 sm:py-8">
                 <div className="flex flex-col items-center text-center justify-center border-b pb-12">
