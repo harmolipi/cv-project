@@ -74,32 +74,6 @@ const App = () => {
 
   const education = educationalInstitutions.map((educationalInstitution) => {
     return (
-<<<<<<< HEAD
-      <section className="min-h-screen py-5 text-gray-600 body-font bg-gray-200">
-        <div className="absolute top-1 right-1">
-          <PreviewModeButton />
-        </div>
-        <div className="container my-5 mx-auto flex flex-col bg-white">
-          <div className="w-11/12 mx-auto">
-            <div className="flex flex-col sm:flex-row my-10">
-              <div className="sm:w-2/5 text-center sm:pr-8 sm:py-8">
-                <div className="flex flex-col items-center text-center justify-center border-b pb-12">
-                  <h2 className="font-medium title-font mt-4 text-gray-900 text-2xl">
-                    <EditableText text="Name" />
-                  </h2>
-                  <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-                  <p className="font-light text-gray-600">
-                    <EditableText text="Email" />
-                  </p>
-                  <p className="font-light text-gray-600">
-                    <EditableText text="Phone number" />
-                  </p>
-                  <p className="font-light text-gray-600">
-                    <FontAwesomeIcon icon={faGithub} />{' '}
-                    <EditableText text="Github profile" />
-                  </p>
-                </div>
-=======
       <li key={educationalInstitution.id} className="mt-3">
         {educationalInstitution.school}
       </li>
@@ -113,7 +87,6 @@ const App = () => {
       </li>
     );
   });
->>>>>>> functional-components
 
   return (
     <section className="min-h-screen py-5 text-gray-600 body-font bg-gray-200">
@@ -121,7 +94,7 @@ const App = () => {
         <PreviewModeButton />
       </div>
       <div className="container my-5 mx-auto flex flex-col bg-white">
-        <div className="lg:w-11/12 mx-auto">
+        <div className="w-11/12 mx-auto">
           <div className="flex flex-col sm:flex-row my-10">
             <div className="sm:w-2/5 text-center sm:pr-8 sm:py-8">
               <div className="flex flex-col items-center text-center justify-center border-b pb-12">
