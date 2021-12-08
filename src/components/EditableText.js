@@ -25,7 +25,7 @@ const EditableText = ({ inputType = 'text', ...props }) => {
         placeholder={placeholder}
         value={text}
         id="currently-editing"
-        className="form-textarea appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+        className="form-textarea appearance-none border rounded h-36 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
         onChange={handleChange}
         onBlur={handleClickAway}
       />
@@ -35,14 +35,14 @@ const EditableText = ({ inputType = 'text', ...props }) => {
         placeholder={placeholder}
         value={text}
         id="currently-editing"
-        className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-10/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         onChange={handleChange}
         onBlur={handleClickAway}
       />
     );
 
   if (isEditing) {
-    return <span>{inputField}</span>;
+    return <span className="w-auto">{inputField}</span>;
   } else if (text) {
     return (
       <span className="editable-text" onClick={handleClick}>
