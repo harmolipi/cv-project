@@ -1,90 +1,69 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class EditableText extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isEditing: false,
-      text: '',
-      placeholder: this.props.text,
-      inputType: this.props.inputType,
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleClickAway = this.handleClickAway.bind(this);
-  }
+const EditableText = ({ inputType = 'text', ...props }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [text, setText] = useState('');
+  const [placeholder] = useState(props.text);
 
-  static defaultProps = {
-    inputType: 'text',
+  const handleChange = (e) => setText(e.target.value);
+  const handleClick = () => setIsEditing(true);
+  const handleClickAway = (e) => {
+    setIsEditing(false);
+    setText(e.target.value);
   };
 
-  handleChange(event) {
-    this.setState({ text: event.target.value });
-  }
-
-  handleClick() {
-    this.setState({ isEditing: true });
-  }
-
-  handleClickAway(event) {
-    this.setState({
-      isEditing: false,
-      text: event.target.value,
-    });
-  }
-
-  componentDidUpdate() {
-    if (this.state.isEditing) {
-      const activeInput = document.querySelector('#currently-editing');
-      activeInput.focus();
+  useEffect(() => {
+    if (isEditing) {
+      document.querySelector('#currently-editing').focus();
     }
-  }
+  }, [isEditing]);
 
-  render() {
-    const inputField =
-      this.state.inputType === 'textarea' ? (
-        <textarea
-          type={this.state.inputType}
-          placeholder={this.state.placeholder}
-          value={this.state.text}
-          id="currently-editing"
-          className="form-textarea appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
-          onChange={this.handleChange}
-          onBlur={this.handleClickAway}
-        />
-      ) : (
-        <input
-          type={this.state.inputType}
-          placeholder={this.state.placeholder}
-          value={this.state.text}
-          id="currently-editing"
-          className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          onChange={this.handleChange}
-          onBlur={this.handleClickAway}
-        />
-      );
-    if (this.state.isEditing) {
-      return <span>{inputField}</span>;
-    }
+  const inputField =
+    inputType === 'textarea' ? (
+      <textarea
+        type={inputType}
+        placeholder={placeholder}
+        value={text}
+        id="currently-editing"
+        className="form-textarea appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+        onChange={handleChange}
+        onBlur={handleClickAway}
+      />
+    ) : (
+      <input
+        type={inputType}
+        placeholder={placeholder}
+        value={text}
+        id="currently-editing"
+        className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        onChange={handleChange}
+        onBlur={handleClickAway}
+      />
+    );
 
-    return this.state.text ? (
-      <span className="editable-text" onClick={this.handleClick}>
-        {this.state.inputType === 'date'
-          ? new Date(this.state.text).toLocaleDateString('en-us', {
+  if (isEditing) {
+    return <span>{inputField}</span>;
+  } else if (text) {
+    return (
+      <span className="editable-text" onClick={handleClick}>
+        {inputType === 'date'
+          ? new Date(text).toLocaleDateString('en-us', {
               year: 'numeric',
               month: 'long',
             })
-          : this.state.text}
+          : text}
       </span>
-    ) : (
+    );
+  } else {
+    return (
       <span
         className="editable-text empty-field bg-blue-50 hover:bg-blue-200"
-        onClick={this.handleClick}
+        onClick={handleClick}
       >
-        {this.state.placeholder}
+        {placeholder}
       </span>
     );
   }
-}
+};
 
 export default EditableText;
